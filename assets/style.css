@@ -5,11 +5,17 @@ body, html {
 }
 
 .container {
-    display: flex;
+    display: grid;
+    grid-template-areas:
+        "sidebar content"
+        "footer footer";
+    grid-template-columns: 200px 1fr; /* 200px para el sidebar, 1fr para el contenido */
+    grid-template-rows: 1fr auto; /* 1fr para el contenido principal, auto para el footer */
+    min-height: 100vh; /* Asegura que el grid ocupe toda la altura de la ventana */
 }
 
 .sidebar {
-    width: 200px;
+    grid-area: sidebar;
     background-color: #f0f0f0;
     padding: 20px;
     display: flex;
@@ -34,44 +40,16 @@ body, html {
 }
 
 .content {
-    flex-grow: 1;
+    grid-area: content;
     padding: 20px;
 }
 
-/* Estilos para dispositivos pequeños */
-@media (max-width: 600px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        flex-direction: column; /* Cambiado a columna */
-        align-items: center; /* Centrar elementos */
-    }
-
-    .sidebar .logo img {
-      margin-bottom: 10px;
-    }
-
-    .sidebar nav ul {
-        display: flex;
-        flex-direction: column; /* Cambiado a columna */
-        align-items: center; /* Centrar elementos */
-        width: 100%; /* Ocupar todo el ancho */
-    }
-
-    .sidebar nav ul li {
-        width: 100%; /* Ocupar todo el ancho */
-        text-align: center; /* Centrar texto */
-    }
-
-    .sidebar nav ul li a {
-        padding: 10px;
-    }
+.card-img-top {
+    width: 300px;
 }
 
-.footer {
+footer {
+    grid-area: footer;
     background-color: #f0f0f0;
     padding: 20px;
 }
@@ -113,6 +91,41 @@ body, html {
 
 /* Estilos para dispositivos pequeños */
 @media (max-width: 600px) {
+    .container {
+        grid-template-areas:
+            "sidebar"
+            "content"
+            "footer";
+        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-rows: auto 1fr auto; /* Ajusta las filas */
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar .logo img {
+        margin-bottom: 10px;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .sidebar nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar nav ul li a {
+        padding: 10px;
+    }
+
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -128,4 +141,3 @@ body, html {
         justify-content: center;
     }
 }
-
