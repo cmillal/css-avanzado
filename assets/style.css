@@ -8,6 +8,11 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color:rgb(211, 211, 211);
+    
+}
+
 .container {
     display: grid;
     grid-template-areas:
@@ -43,6 +48,15 @@ html {
     display: block;
 }
 
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.product p {
+    display: flex;
+    justify-content: center;
+}
 .content {
     grid-area: content;
     padding: 20px;
@@ -58,26 +72,42 @@ html {
 .product img {
 
     width: 100%;
-
+   
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    
 
 }
 
 .gallery-item {
     transition: all 0.3s ease-in-out;
     width: 300px;
-    
+    border: #333 solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .gallery-item:hover {
     transform: scale(1.1);
     background-color: grey;
     color: white;
+}
+
+.volver-arriba {
+   position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #543de5;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 13%;
+    text-decoration: none;
+    color: #f4ebeb;
 }
 
 footer {
