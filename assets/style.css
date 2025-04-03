@@ -10,7 +10,7 @@ html {
 
 body {
     background-color:rgb(211, 211, 211);
-    
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 .container {
@@ -96,6 +96,7 @@ h2 {
     transform: scale(1.1);
     background-color: grey;
     color: white;
+    
 }
 
 .volver-arriba {
